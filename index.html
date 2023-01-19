@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Make a box with a form fillable name, and several drop downs.
+    CSS and Javascript will handle the rest.-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Adversary Builder</title>
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="adversary.js" charset="utf-8"></script>></script>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="nameclass"><div id= "cname">
+            <label for="name">Adversary name:</label>
+            <input type="name" name="name" id="aname" value="Adversary Name">
+    </div>
+    <div id= "cclassification">
+        <label for="classification">Classification:</label>
+        <select name="Classification" id="classification">
+            <option value="minion">Minion</option>
+            <option value="elite">Elite</option>
+            <option value="solo">Solo</option>
+        </select>
+    </div>
+</div>
+        <div id= "cenemy"><label for="type">Enemy Type:</label><label for="rank">Adversary Rank:</label><br>
+        <select name="type" id ="enemyt">
+            <option value="caster">Caster</option>
+            <option value="controller">Controller</option>
+            <option value="defender">Defender</option>
+            <option value="generalist">Generalist</option>
+            <option value="lurker">Lurker</option>
+            <option value="striker">Striker</option>
+            <option value="iconic">Iconic</option>
+        </select>
+        <select name="rank" id="rank">
+            <option value="e">E</option>
+            <option value="d">D</option>
+            <option value="c">C</option>
+            <option value="b">B</option>
+            <option value="a">A</option>
+            <option value="s">S</option>
+        </select>
+    </div>
+    <div id="clvl">
+        <label for="level">Enemy level:</label><label for="player">Number of players:</label><br>
+        <select name="level" id="lvl" class = "lvl">
+            <option class ="test3"value="1">1</option>
+            <option value="2">2</option>
+            <option class ="test2"value="3">3</option>
+            <option class ="test"value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+        </select> <input type = "number"><br>
+        <label for="stats">Enemy Statistics:</label><br>
+        <label for="str">STR</label><label for="dex">DEX</label><label for="con">CON</label>
+        <label for="int">INT</label><label for="wis">WIS</label><label for="cha">CHA</label><br>
+        <select for="str" id='str'>
+            <option data-group='SHOW' value='0'>--Select--
+
+            </option>
+        </select>
+        <select for="dex" id="dex">
+            <option value='0'>--Select--
+
+            </option>
+        </select>
+        <select for="con" id="con">
+            <option data-group='SHOW' value='0'>--Select--
+
+            </option>
+        </select>
+        <select for="int" id="int">
+            <option data-group='SHOW' value='0'>--Select--
+
+            </option>
+        </select>
+        <select for="wis" id="wis">
+            <option data-group='SHOW' value='0'>--Select--
+
+            </option>
+        </select>
+        <select for="cha" id="cha">
+            <option data-group='SHOW' value='0'>--Select--
+
+            </option>
+        </select>
+    </div><br>
+        
+        <button id="print" class ="print"  onclick="printname()">PRINT ADVERSARY</button>
+        <label id="printHello"></label><label id="printNumber"></label>
+    </div>
+</body>
+</html>

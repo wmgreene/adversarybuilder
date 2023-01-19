@@ -1,0 +1,72 @@
+Caster: AC -2, Saving throws +3, Hit points x0.5,  Damage per action 1.25x, Chakra points x2, Speed +0
+
+Controller: AC -1, Saving throws +1, Hit points x0.75, Damage per turn x1, Chakra points x2, Speed +0
+
+Defender: AC + 3, Saving throws +2, Hit points 1.5x, Chakra points x1, Damage per turn 0.5x, Speed +10
+
+Generalist: AC +2, Saving Throws -2, Hit points x1, Chakra points x1, Damage per turn x1, Speed +0
+
+Lurker: AC -3, Saving throws -3, Hit points x0.75, Chakra x0.75, Damage per turn 1.75x, Speed +5
+
+Striker: AC +1, Saving throws -1, Hit points x1.25, Chakra x0.75, Damage 1.5x, Speed 15+
+
+Supporter: AC +0, Saving Throws +0, Hit points x1, Chakra x1.5, damage per turn x0.75, Speed +5
+
+Iconic: AC +2, Saving Throws +1, Hit points x2, Chakra points x2, Damage per turn x2, Speed +20
+
+Minions: HP 1-20, Chakra points 1-20, Init -2, XP x0.25
+
+Elites: HP X2, Chakra points x2, Init -2, Xp x2
+Elite Action: May take one Elite Action at the start or end of each round to either move or take an additional action.
+Elite Tenacity: When would roll saving throw or ability check can add additional d4. Pool of d4 = level.
+
+Solos: Hit Points x(# Of Players), Chakra points x(# of players), Init +4, XP x4
+Legendary action: Can use one legendary action at the end of each players turn. Can be used to move, take an attack action, cast a jutsu, or use a feature.
+Legendary Resistance: x/Day X= level/3 rounded up.
+Legendary tenacity: Whenever you would r oll a saving throw or ability check roll an additional d6, add that to the check. Pool = level.
+Phase transition: At 60% and 30% HP you may remove all on-going effects and trigger a new phase transition.
+
+Damage per action: 0-19 Actions per action 1
+20-39 2, 10-20
+40-59, 13-20
+60+,  15-???
+
+Adversary Rank:
+E: d2, 2/2, AC -3, to hit -3, Save DC -3, Bonus Damage 0
+D: d4, 4/3, AC -2, to hit -2, Save DC -2, Bonus Damage 0
+C: D6, 6/4, AC 0, To hit 0, Save DC 0, Bonus damage +lvl
+B: D8, 8/5, AC 0, To hit 0, Save dc 0, Bonus damage +1.5lvl
+A: D10, 10/6, AC 1, To hit, 1, Save DC, 1, Bonus 2x lvl
+S: d12, 12/7, AC 2, To hit 2, Save DC 2, Bonus 2.5x lvl
+
+Base statistics by level:
+1: AB mods: +2,+2,+1,+0,-1,-1
+2: Damage 9
+3: Damage 11, AB mods: +2,+2,+1,+0,0,-1
+4: AC: 12, Prof: 4, Damage: 13, AB mods: +3,+3,+1,+0,0,-1
+5: Damage 15
+6: Damage 18, AB mods: +4,+3,+1,+1,0,-1
+7: Prof: 5, Damage: 21, AB mods: +4,+3,+2,+1,0,0
+8: Damage: 25
+9: Damage: 28 AB mods: +5,+4,+2,+1,+1,0
+10: AC: 13, Prof: 6, Damage: 30
+11: Damage 34
+12: Damage 38 AB mods: +6,+4,+2,+1,+1,0
+13: Prof: 7, Damage: 40,
+14: Damage: 42, AB mods: +6,+5,+3,+2,+1,0
+15: Damage: 45 AB mods: +7,+5,+3,+2,+1,0
+16: AC: 14, Prof: 8, Damage: 47,
+17: Damage 49, AB mods: +7,+5,+3,+2,+1,1
+18: Damage: 50, AB mods: +8,+5,+3,+2,+1,1
+19: Prof: 9, Damage: 54, AB mods: +8,+6,+3,+2,+2,1
+20: Damage: 58, AB mods: +8,+6,+4,+2,+2,1
+21: Damage: 60, AB mods: +9,+6,+4,+2,+2,1
+22: AC: 15, Prof: 10, Damage: 64, AB mods: +9,+6,+4,+3,+2,+1
+23: Damage: 67, AB mods: +10,+7,+4,+3,+2,+1
+24: Damage: 70,
+25: Prof: 11, Damage: 73 AB mod: +11,+7,+4,+3,+2,+1
+26: Damage: 75
+27: Damage: 78, AB mod: +12,+7,+4,+3,+2,+2
+28: AC: 16, Prof: 12, Damage: 80, AB mod: +12,+7,+5,+3,+2,+2
+29: Damage: 85, AB mod: +12,+8,+5,+4,+3,+2
+30: Damage: 90, AB mod: +13,+8,+5,+4,+3,+2
