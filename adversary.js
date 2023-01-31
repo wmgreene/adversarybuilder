@@ -2,10 +2,13 @@
 var ACint = 11;
 var prof = 3;
 var dam = 7;
-//var ACact = ACint + ACcla + dex
-var ACcla = 0
+var damc = 0.1;
+// var damact = Math.round(float((bd + dam)) * damc);
+//var ACact = ACint + ACcla +  ACr + dex 
+var ACcla = 0;
 var ST = 0;
 var spb= 30;
+var ACr = 0;
 //var smhp = plnmb * hp;
 //var smcha = plnmb * cha;
 var emhp = mhp * 2;
@@ -69,15 +72,18 @@ function printnumber(){
 $(document).ready(function()  {
     $("#lvl").change(function(){
         var val = $(this).val();
+        function stat(e,f){
+            $("#str").append($('<option></option>').val(e).html(f));
+            $("#dex").append($('<option></option>').val(e).html(f));
+            $("#con").append($('<option></option>').val(e).html(f));
+            $("#int").append($('<option></option>').val(e).html(f));
+            $("#wis").append($('<option></option>').val(e).html(f));
+            $("#cha").append($('<option></option>').val(e).html(f));
+        }
         if (val =="1"){
             clear();
             $.each(abmod1, function(val, text) {
-            $("#str").append($('<option></option>').val(val).html(text));
-            $("#dex").append($('<option></option>').val(val).html(text));
-            $("#con").append($('<option></option>').val(val).html(text));
-            $("#int").append($('<option></option>').val(val).html(text));
-            $("#wis").append($('<option></option>').val(val).html(text));
-            $("#cha").append($('<option></option>').val(val).html(text));
+            stat(val,text);
         });
          ACint = 11;
          prof = 3;
@@ -85,12 +91,7 @@ $(document).ready(function()  {
     }else if(val =="2"){
         clear();
             $.each(abmod1, function(val, text) {
-            $("#str").append($('<option></option>').val(val).html(text));
-            $("#dex").append($('<option></option>').val(val).html(text));
-            $("#con").append($('<option></option>').val(val).html(text));
-            $("#int").append($('<option></option>').val(val).html(text));
-            $("#wis").append($('<option></option>').val(val).html(text));
-            $("#cha").append($('<option></option>').val(val).html(text));
+                stat(val,text);
         });
         ACint = 11;
          prof = 3;
@@ -98,12 +99,7 @@ $(document).ready(function()  {
     }else if(val =="3"){
         clear();
             $.each(abmod3, function(val, text) {
-            $("#str").append($('<option></option>').val(val).html(text));
-            $("#dex").append($('<option></option>').val(val).html(text));
-            $("#con").append($('<option></option>').val(val).html(text));
-            $("#int").append($('<option></option>').val(val).html(text));
-            $("#wis").append($('<option></option>').val(val).html(text));
-            $("#cha").append($('<option></option>').val(val).html(text));
+                stat(val,text);
                 
     });
     ACint = 11;
@@ -112,12 +108,7 @@ $(document).ready(function()  {
 }else if(val =="4"){
     clear();
         $.each(abmod4, function(val, text) {
-        $("#str").append($('<option></option>').val(val).html(text));
-        $("#dex").append($('<option></option>').val(val).html(text));
-        $("#con").append($('<option></option>').val(val).html(text));
-        $("#int").append($('<option></option>').val(val).html(text));
-        $("#wis").append($('<option></option>').val(val).html(text));
-        $("#cha").append($('<option></option>').val(val).html(text));
+            stat(val,text);
             
 });
 ACint = 12;
@@ -126,12 +117,7 @@ ACint = 12;
     }else if(val =="5"){
         clear();
             $.each(abmod4, function(val, text) {
-            $("#str").append($('<option></option>').val(val).html(text));
-            $("#dex").append($('<option></option>').val(val).html(text));
-            $("#con").append($('<option></option>').val(val).html(text));
-            $("#int").append($('<option></option>').val(val).html(text));
-            $("#wis").append($('<option></option>').val(val).html(text));
-            $("#cha").append($('<option></option>').val(val).html(text));
+                stat(val,text);
                 
     });
     ACint = 12;
@@ -140,12 +126,7 @@ ACint = 12;
         }else if(val =="6"){
             clear();
                 $.each(abmod6, function(val, text) {
-                $("#str").append($('<option></option>').val(val).html(text));
-                $("#dex").append($('<option></option>').val(val).html(text));
-                $("#con").append($('<option></option>').val(val).html(text));
-                $("#int").append($('<option></option>').val(val).html(text));
-                $("#wis").append($('<option></option>').val(val).html(text));
-                $("#cha").append($('<option></option>').val(val).html(text));
+                    stat(val,text);
                     
                 });
             ACint = 12;
@@ -154,12 +135,7 @@ ACint = 12;
             }else if(val =="7"){
             clear();
             $.each(abmod7, function(val, text) {
-        $("#str").append($('<option></option>').val(val).html(text));
-        $("#dex").append($('<option></option>').val(val).html(text));
-        $("#con").append($('<option></option>').val(val).html(text));
-        $("#int").append($('<option></option>').val(val).html(text));
-        $("#wis").append($('<option></option>').val(val).html(text));
-        $("#cha").append($('<option></option>').val(val).html(text));
+                stat(val,text);
                         
         });
         ACint = 12;
@@ -168,12 +144,7 @@ ACint = 12;
         }else if(val =="8"){
         clear();
         $.each(abmod7, function(val, text) {
-        $("#str").append($('<option></option>').val(val).html(text));
-        $("#dex").append($('<option></option>').val(val).html(text));
-        $("#con").append($('<option></option>').val(val).html(text));
-        $("#int").append($('<option></option>').val(val).html(text));
-        $("#wis").append($('<option></option>').val(val).html(text));
-        $("#cha").append($('<option></option>').val(val).html(text));
+            stat(val,text);
                             
         });
         ACint = 12;
@@ -182,12 +153,7 @@ ACint = 12;
         }else if(val =="9"){
             clear();
             $.each(abmod9, function(val, text) {
-            $("#str").append($('<option></option>').val(val).html(text));
-            $("#dex").append($('<option></option>').val(val).html(text));
-            $("#con").append($('<option></option>').val(val).html(text));
-             $("#int").append($('<option></option>').val(val).html(text));
-             $("#wis").append($('<option></option>').val(val).html(text));
-             $("#cha").append($('<option></option>').val(val).html(text));
+                stat(val,text);
               });
             ACint = 12;
             prof = 5;
@@ -195,12 +161,7 @@ ACint = 12;
             }else if(val =="10"){
             clear();
                 $.each(abmod9, function(val, text) {
-                $("#str").append($('<option></option>').val(val).html(text));
-                $("#dex").append($('<option></option>').val(val).html(text));
-                 $("#con").append($('<option></option>').val(val).html(text));
-                 $("#int").append($('<option></option>').val(val).html(text));
-                 $("#wis").append($('<option></option>').val(val).html(text));
-                 $("#cha").append($('<option></option>').val(val).html(text));
+                    stat(val,text);
                     });
                     ACint = 13;
                     prof = 6;
@@ -208,12 +169,7 @@ ACint = 12;
                     }else if(val =="11"){
                     clear();
                     $.each(abmod9, function(val, text) {
-                    $("#str").append($('<option></option>').val(val).html(text));
-                    $("#dex").append($('<option></option>').val(val).html(text));
-                    $("#con").append($('<option></option>').val(val).html(text));
-                    $("#int").append($('<option></option>').val(val).html(text));
-                    $("#wis").append($('<option></option>').val(val).html(text));
-                    $("#cha").append($('<option></option>').val(val).html(text));
+                    stat(val,text);
                         });
                         ACint = 13;
                         prof = 6;
@@ -221,12 +177,7 @@ ACint = 12;
                         }else if(val =="12"){
                         clear();
                         $.each(abmod12, function(val, text) {
-                        $("#str").append($('<option></option>').val(val).html(text));
-                        $("#dex").append($('<option></option>').val(val).html(text));
-                        $("#con").append($('<option></option>').val(val).html(text));
-                        $("#int").append($('<option></option>').val(val).html(text));
-                        $("#wis").append($('<option></option>').val(val).html(text));
-                        $("#cha").append($('<option></option>').val(val).html(text));
+                        stat(val,text);
                         });
                         ACint = 13;
                         prof = 6;
@@ -234,12 +185,7 @@ ACint = 12;
                         }else if(val =="13"){
                         clear();
                         $.each(abmod12, function(val, text) {
-                        $("#str").append($('<option></option>').val(val).html(text));
-                        $("#dex").append($('<option></option>').val(val).html(text));
-                        $("#con").append($('<option></option>').val(val).html(text));
-                        $("#int").append($('<option></option>').val(val).html(text));
-                        $("#wis").append($('<option></option>').val(val).html(text));
-                        $("#cha").append($('<option></option>').val(val).html(text));
+                        stat(val,text);
                         });
                         ACint = 13;
                         prof = 7;
@@ -247,12 +193,7 @@ ACint = 12;
                         }else if(val =="14"){
                         clear();
                         $.each(abmod14, function(val, text) {
-                        $("#str").append($('<option></option>').val(val).html(text));
-                        $("#dex").append($('<option></option>').val(val).html(text));
-                        $("#con").append($('<option></option>').val(val).html(text));
-                        $("#int").append($('<option></option>').val(val).html(text));
-                        $("#wis").append($('<option></option>').val(val).html(text));
-                        $("#cha").append($('<option></option>').val(val).html(text));
+                        stat(val,text);
                         });
                          ACint = 13;
                           prof = 7;
@@ -260,12 +201,7 @@ ACint = 12;
                          }else if(val =="15"){
                          clear();
                          $.each(abmod15, function(val, text) {
-                         $("#str").append($('<option></option>').val(val).html(text));
-                          $("#dex").append($('<option></option>').val(val).html(text));
-                           $("#con").append($('<option></option>').val(val).html(text));
-                          $("#int").append($('<option></option>').val(val).html(text));
-                          $("#wis").append($('<option></option>').val(val).html(text));
-                          $("#cha").append($('<option></option>').val(val).html(text));
+                        stat(val,text);
                            });
                            ACint = 13;
                             prof = 7;
@@ -273,12 +209,7 @@ ACint = 12;
                            }else if(val =="16"){
                            clear();
                           $.each(abmod15, function(val, text) {
-                          $("#str").append($('<option></option>').val(val).html(text));
-                           $("#dex").append($('<option></option>').val(val).html(text));
-                            $("#con").append($('<option></option>').val(val).html(text));
-                            $("#int").append($('<option></option>').val(val).html(text));
-                            $("#wis").append($('<option></option>').val(val).html(text));
-                            $("#cha").append($('<option></option>').val(val).html(text));
+                        stat(val,text);
                              });
                               ACint = 14;
                               prof = 8;
@@ -286,53 +217,31 @@ ACint = 12;
                                }else if(val =="16"){
                                clear();
                               $.each(abmod15, function(val, text) {
-                              $("#str").append($('<option></option>').val(val).html(text));
-                            $("#dex").append($('<option></option>').val(val).html(text));
-                             $("#con").append($('<option></option>').val(val).html(text));
-                             $("#int").append($('<option></option>').val(val).html(text));
-                             $("#wis").append($('<option></option>').val(val).html(text));
-                             $("#cha").append($('<option></option>').val(val).html(text));
-                             });
+                                stat(val,text);
+                             
                              ACint = 14;
                               prof = 8;
                               dam = 47;
-                             }else if(val =="17"){
-                                clear();
-                                $.each(abmod17, function(val, text) {
-                                $("#str").append($('<option></option>').val(val).html(text));
-                                $("#dex").append($('<option></option>').val(val).html(text));
-                                $("#con").append($('<option></option>').val(val).html(text));
-                                $("#int").append($('<option></option>').val(val).html(text));
-                                $("#wis").append($('<option></option>').val(val).html(text));
-                                $("#cha").append($('<option></option>').val(val).html(text));
-                                        
+                             });}else if(val =="17"){
+                            clear();
+                            $.each(abmod17, function(val, text) {
+                            stat(val,text);
                             });
                             ACint = 14;
-                                 prof = 8;
-                                 dam = 49;
-                                }else if(val =="18"){
-                                    clear();
-                                    $.each(abmod18, function(val, text) {
-                                     $("#str").append($('<option></option>').val(val).html(text));
-                                    $("#dex").append($('<option></option>').val(val).html(text));
-                                    $("#con").append($('<option></option>').val(val).html(text));
-                                     $("#int").append($('<option></option>').val(val).html(text));
-                                    $("#wis").append($('<option></option>').val(val).html(text));
-                                     $("#cha").append($('<option></option>').val(val).html(text));
-                                            
+                            prof = 8;
+                            dam = 49;
+                            }else if(val =="18"){
+                            clear();
+                            $.each(abmod18, function(val, text) {
+                            stat(val,text);       
                                 });
                                 ACint = 14;
                                 prof = 8;
                                 dam = 50;
                                 }else if(val =="19"){
                                 clear();
-                                $.each(abmod19, function(val, text) {
-                                $("#str").append($('<option></option>').val(val).html(text));
-                                $("#dex").append($('<option></option>').val(val).html(text));
-                                $("#con").append($('<option></option>').val(val).html(text));
-                                $("#int").append($('<option></option>').val(val).html(text));
-                                $("#wis").append($('<option></option>').val(val).html(text));
-                                $("#cha").append($('<option></option>').val(val).html(text));
+                                $.each(abmod19, function(val, text){
+                                stat(val,text);
                                  });
                                 ACint = 14;
                                 prof = 9;
@@ -340,12 +249,7 @@ ACint = 12;
                                 }else if(val =="20"){
                              clear();
                                 $.each(abmod20, function(val, text) {
-                                 $("#str").append($('<option></option>').val(val).html(text));
-                                $("#dex").append($('<option></option>').val(val).html(text));
-                                $("#con").append($('<option></option>').val(val).html(text));
-                                $("#int").append($('<option></option>').val(val).html(text));
-                                $("#wis").append($('<option></option>').val(val).html(text));
-                                $("#cha").append($('<option></option>').val(val).html(text));
+                                stat(val,text);
                                  });
                                  ACint = 14;
                                prof = 9;
@@ -353,12 +257,7 @@ ACint = 12;
                                  }else if(val =="21"){
                                  clear();
                                   $.each(abmod21, function(val, text) {
-                                  $("#str").append($('<option></option>').val(val).html(text));
-                                  $("#dex").append($('<option></option>').val(val).html(text));
-                                   $("#con").append($('<option></option>').val(val).html(text));
-                                    $("#int").append($('<option></option>').val(val).html(text));
-                                     $("#wis").append($('<option></option>').val(val).html(text));
-                                      $("#cha").append($('<option></option>').val(val).html(text));
+                                    stat(val,text);
                                      });
                                      ACint = 14;
                                      prof = 9;
@@ -366,12 +265,7 @@ ACint = 12;
                                       }else if(val =="22"){
                                        clear();
                                      $.each(abmod22, function(val, text) {
-                                     $("#str").append($('<option></option>').val(val).html(text));
-                                    $("#dex").append($('<option></option>').val(val).html(text));
-                                     $("#con").append($('<option></option>').val(val).html(text));
-                                     $("#int").append($('<option></option>').val(val).html(text));
-                                      $("#wis").append($('<option></option>').val(val).html(text));
-                                      $("#cha").append($('<option></option>').val(val).html(text));
+                                    stat(val,text);
                                       });
                                       ACint = 15;
                                       prof = 10;
@@ -379,12 +273,7 @@ ACint = 12;
                                        }else if(val =="23"){
                                        clear();
                                     $.each(abmod23, function(val, text) {
-                                     $("#str").append($('<option></option>').val(val).html(text));
-                                     $("#dex").append($('<option></option>').val(val).html(text));
-                                     $("#con").append($('<option></option>').val(val).html(text));
-                                $("#int").append($('<option></option>').val(val).html(text));
-                                    $("#wis").append($('<option></option>').val(val).html(text));
-                                    $("#cha").append($('<option></option>').val(val).html(text));
+                                    stat(val,text);
                                     });
                                     ACint = 15;
                                     prof = 10;
@@ -392,12 +281,7 @@ ACint = 12;
                                     }else if(val =="24"){
                                     clear();
                                 $.each(abmod23, function(val, text) {
-                                $("#str").append($('<option></option>').val(val).html(text));
-                                $("#dex").append($('<option></option>').val(val).html(text));
-                                $("#con").append($('<option></option>').val(val).html(text));
-                                $("#int").append($('<option></option>').val(val).html(text));
-                                $("#wis").append($('<option></option>').val(val).html(text));
-                                $("#cha").append($('<option></option>').val(val).html(text));
+                                stat(val,text);
                                   });
                                 ACint = 15;
                                  prof = 10;
@@ -405,25 +289,15 @@ ACint = 12;
                                   }else if(val =="25"){
                                    clear();
                                     $.each(abmod25, function(val, text) {
-                                    $("#str").append($('<option></option>').val(val).html(text));
-                                    $("#dex").append($('<option></option>').val(val).html(text));
-                                    $("#con").append($('<option></option>').val(val).html(text));
-                                    $("#int").append($('<option></option>').val(val).html(text));
-                                    $("#wis").append($('<option></option>').val(val).html(text));
-                                    $("#cha").append($('<option></option>').val(val).html(text));
+                                    stat(val,text);
                                      });
                                     ACint = 15;
                                     prof = 11;
                                     dam = 73;
                                     }else if(val =="26"){
                                     clear();
-                                    $.each(abmod26, function(val, text) {
-                                    $("#str").append($('<option></option>').val(val).html(text));
-                                    $("#dex").append($('<option></option>').val(val).html(text));
-                                    $("#con").append($('<option></option>').val(val).html(text));
-                                    $("#int").append($('<option></option>').val(val).html(text));
-                                    $("#wis").append($('<option></option>').val(val).html(text));
-                                    $("#cha").append($('<option></option>').val(val).html(text));
+                                    $.each(abmod25, function(val, text) {
+                                    stat(val,text);
                                     });
                                     ACint = 15;
                                     prof = 11;
@@ -431,12 +305,7 @@ ACint = 12;
                                     }else if(val =="27"){
                                         clear();
                                         $.each(abmod27, function(val, text) {
-                                        $("#str").append($('<option></option>').val(val).html(text));
-                                        $("#dex").append($('<option></option>').val(val).html(text));
-                                        $("#con").append($('<option></option>').val(val).html(text));
-                                        $("#int").append($('<option></option>').val(val).html(text));
-                                        $("#wis").append($('<option></option>').val(val).html(text));
-                                        $("#cha").append($('<option></option>').val(val).html(text));
+                                        stat(val,text);
                                         });
                                         ACint = 15;
                                         prof = 11;
@@ -444,12 +313,7 @@ ACint = 12;
                                         }else if(val =="28"){
                                             clear();
                                             $.each(abmod28, function(val, text) {
-                                            $("#str").append($('<option></option>').val(val).html(text));
-                                            $("#dex").append($('<option></option>').val(val).html(text));
-                                            $("#con").append($('<option></option>').val(val).html(text));
-                                            $("#int").append($('<option></option>').val(val).html(text));
-                                            $("#wis").append($('<option></option>').val(val).html(text));
-                                            $("#cha").append($('<option></option>').val(val).html(text));
+                                            stat(val,text);
                                             });
                                             ACint = 16;
                                             prof = 12;
@@ -457,12 +321,7 @@ ACint = 12;
                                             }else if(val =="29"){
                                                 clear();
                                                 $.each(abmod29, function(val, text) {
-                                                $("#str").append($('<option></option>').val(val).html(text));
-                                                $("#dex").append($('<option></option>').val(val).html(text));
-                                                $("#con").append($('<option></option>').val(val).html(text));
-                                                $("#int").append($('<option></option>').val(val).html(text));
-                                                $("#wis").append($('<option></option>').val(val).html(text));
-                                                $("#cha").append($('<option></option>').val(val).html(text));
+                                                stat(val,text);
                                                 });
                                                 ACint = 16;
                                                 prof = 12;
@@ -470,12 +329,7 @@ ACint = 12;
                                                 }else if(val =="30"){
                                                     clear();
                                                     $.each(abmod30, function(val, text) {
-                                                    $("#str").append($('<option></option>').val(val).html(text));
-                                                    $("#dex").append($('<option></option>').val(val).html(text));
-                                                    $("#con").append($('<option></option>').val(val).html(text));
-                                                    $("#int").append($('<option></option>').val(val).html(text));
-                                                    $("#wis").append($('<option></option>').val(val).html(text));
-                                                    $("#cha").append($('<option></option>').val(val).html(text));
+                                                    stat(val,text);
                                                     });
                                                     ACint = 16;
                                                     prof = 12;
@@ -501,10 +355,12 @@ $(document).ready(function()  {
         if (val =="caster"){ ACint -= 2; 
             console.log(ACint);
             ACint += 2;
+            console.log(bd);
         }else if (val =="controller"){
             ACint -= 1;
             console.log(ACint);
             ACint += 1;
+            console.log(bd);
 
         }
 
@@ -516,12 +372,15 @@ $(document).ready(function()  {
 $(document).ready(function()  {
     $("#rank").change(function(){
         var val = $(this).val();
+        var lvln = $("#lvl").val();
         if (val =="e"){ mhp = 2;
             mcha = 2;
             ahp = 2;
             acha = 2;
             hitt = -3;
             savet = -3;
+            ACr =  -3;
+            bd = 0;
         }else if (val =="d"){
             mhp = 4;
             mcha = 4;
@@ -529,10 +388,48 @@ $(document).ready(function()  {
             acha = 3;
             hitt = -2;
             savet = -2;
+            ACr = -2;
+            bd = 0;
 
+        }else if (val =="c"){
+            mhp = 6;
+            mcha = 6;
+            ahp = 4;
+            acha = 4;
+            hitt = 0;
+            savet = 0;
+            ACr = 0;
+            bd = lvln;
+        }else if (val =="b"){
+            mhp = 8;
+            mcha = 8;
+            ahp = 5;
+            acha = 5;
+            hitt = 0;
+            savet = 0; 
+            ACr = 0;
+            bd = Math.round(1.5*lvln);
+        }else if (val =="a"){
+            mhp = 10;
+            mcha = 10;
+            ahp = 6;
+            acha = 6;
+            hitt = 1;
+            savet = 1;
+            ACr = 1;
+            bd = 2*lvln;
+        }else if (val =="s"){
+            mhp = 12;
+            mcha = 12;
+            ahp = 7;
+            acha = 7;
+            hitt = 2;
+            savet = 2;
+            ACr = 2;
+            bd = Math.round(2.5*lvln);
         }
 
-
+        
 
     });
 });
