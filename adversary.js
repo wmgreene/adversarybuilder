@@ -1,73 +1,280 @@
 //defining global variables up here that can be adjusted by the program.
+var abmod1 = ["+2","+2","+1","+0","-1","-1"];
+var abmod3 = ["+2","+2","+1","+0","+0","-1"];
+var abmod4 = ["+3","+3","+1","+0","+0","-1"];
+var abmod6 = ["+4","+3","+1","+1","+0","-1"];
+var abmod7 = ["+4","+3","+2","+1","+0","+0"];
+var abmod9 = ["+5","+4","+2","+1","+1","+0"];
+var abmod12 = ["+6","+4","+2","+1","+1","+0"];
+var abmod14 = ["+6","+5","+3","+2","+1","+0"];
+var abmod15 = ["+7","+5","+3","+2","+1","+0"];
+var abmod17 = ["+7","+5","+3","+2","+1","+1"];
+var abmod18 = ["+8","+5","+3","+2","+1","+1"];
+var abmod19 = ["+8","+6","+3","+2","+2","+1"];
+var abmod20 = ["+8","+6","+4","+2","+2","+1"];
+var abmod21 = ["+9","+6","+4","+2","+2","+1"];
+var abmod22 = ["+9","+6","+4","+3","+2","+1"];
+var abmod23 = ["+10","+7","+4","+3","+2","+1"];
+var abmod25 = ["+11","+7","+4","+3","+2","+1"];
+var abmod27 = ["+12","+7","+4","+3","+2","+2"];
+var abmod28 = ["+12","+7","+5","+3","+2","+2"];
+var abmod29 = ["+12","+8","+5","+4","+3","+2"];
+var abmod30 = ["+13","+8","+5","+4","+3","+2"];
 var ACint = 11;
 var prof = 3;
 var dam = 7;
 var damc = 0.1;
-// var damact = Math.round(float((bd + dam)) * damc);
-//var ACact = ACint + ACcla +  ACr + dex 
+var initc = 0;
 var ACcla = 0;
 var ST = 0;
 var spb= 30;
 var ACr = 0;
-//var smhp = plnmb * hp;
-//var smcha = plnmb * cha;
-var emhp = mhp * 2;
-var emcha = mcha * 2;
+var XPC = 0;
+var DPR = 0;
+var hpc = 0;
+var chac = 0;
+var hpt = 0;
+var chat = 0;
 var mhp = 0;
 var mcha = 0;
 var ahp = 0;
 var acha = 0;
-//var hita = hitt + modifier which will be a function of highest selected attribute between dex and str.
-//var savea = savet + modifier which will be function of highest selected attribute between int and wis
+var str = 0;
+var dex = 0;
+var int = 0;
+var wis = 0;
+var hita = 0;
 var hitt = 0;
-var savet = 0;
+var hitr = 0;
+var savea = 0;
+var savec = 0;
+$(document).ready(function(){
+    $("#classification").change(function(){
+        var val = $(this).val();
+        while(val =="minion"){
+            mhp = 20;
+            mcha = 20;
+            ahp = 1;
+            acha = 1;
+            initc = -2;
+            XPC = 0.25;
+        if(val =="elite")break;}
+        if(val =="elite"){
+            hpc = 2;
+            chac = 2;
+            initc = -2;
+            XPC = 2;
+        }else if(val =="solo"){
+            hpc = $("#playeram").val();
+            chac = $("#playeram").val(); 
+            initc = 4;
+            XPC = 4;
+        }
+        $("#enemyt").change(function(){
+            var val = $(this).val();
+            if (val =="caster"){ ACcla = -2;
+                savec = 3;
+                hpt = 0.5;
+                chat = 2;
+                DPR = 1.25;
+                ACcla = -2;
+                ST = 0;
+        }else if (val =="controller"){
+                ACcla = -1;
+                savec = 1;
+                hpt = 0.75;
+                DPR = 1;
+                chat = 2;
+                ST = 0;
+    
+            }else if (val =="defender"){
+                ACcla = 3;
+                savec = 3;
+                hpt = 1.5;
+                chat = 1;
+                DPR = 0.5;
+                ST = 10;
+            }else if (val =="generalist"){
+                ACcla = 2;
+                savec = -2;
+                hpt = 1;
+                chat = 1;
+                DPR = 1;
+                ST = 0;
+            }else if (val =="lurker"){
+                ACcla = -3;
+                savec = -3;
+                hpt = 0.75;
+                chat = 0.75;
+                DPR = 1.75;
+                ST = 5;
+            }else if (val =="striker"){
+                ACcla = 1;
+                savec = -1;
+                hpt = 1.25;
+                chat = 0.75;
+                DPR = 1.5;
+                ST = 15;
+            }else if (val =="supporter"){
+                ACcla = 0;
+                savec = 0;
+                hpt = 1;
+                chat = 1.5;
+                DPR = 0.75;
+                ST = 5;
+            }else if (val =="iconic"){
+                ACcla = 2;
+                savec = 1;
+                hpt = 2;
+                chat = 2;
+                DPR = 2;
+                ST = 20;
+            }
+            $("#rank").change(function(){
+                var val = $(this).val();
+                var lvln = $("#lvl").val();
+                var lvl = parseInt(lvln)
+                if (val =="e"){ mhp = 2;
+                    mcha = 2;
+                    ahp = 2;
+                    acha = 2;
+                    hitr = -3;
+                    saver = -3;
+                    ACr =  -3;
+                    bd = 0;
+                }else if (val =="d"){
+                    mhp = 4;
+                    mcha = 4;
+                    ahp = 3;
+                    acha = 3;
+                    hitr = -2;
+                    saver = -2;
+                    ACr = -2;
+                    bd = 0;
+                }else if (val =="c"){
+                    mhp = 6;
+                    mcha = 6;
+                    ahp = 4;
+                    acha = 4;
+                    hitr = 0;
+                    saver = 0;
+                    ACr = 0;
+                    bd = lvl;
+                }else if (val =="b"){
+                    mhp = 8;
+                    mcha = 8;
+                    ahp = 5;
+                    acha = 5;
+                    hitr = 0;
+                    saver = 0; 
+                    ACr = 0;
+                    bd = Math.round(1.5*lvl);
+                }else if (val =="a"){
+                    mhp = 10;
+                    mcha = 10;
+                    ahp = 6;
+                    acha = 6;
+                    hitr = 1;
+                    saver = 1;
+                    ACr = 1;
+                    bd = 2*lvl;
+                }else if (val =="s"){
+                    mhp = 12;
+                    mcha = 12;
+                    ahp = 7;
+                    acha = 7;
+                    hitr = 2;
+                    saver = 2;
+                    ACr = 2;
+                    bd = Math.round(2.5*lvl);
+                }
+            });
+            $('#str').change(function(){
+                var dexche = $('#dex').val();
+                var strche = $('#str').val();
+                var stra = $( "#str option:selected" ).text();
+                 str = parseInt(stra);
+                 var dexa = $( "#dex option:selected" ).text();
+                 dex = parseInt(dexa);
+                if (strche < dexche) {
+                    hita = hitr + str + prof;
+                }else if (strche > dexche){
+                    hita = hitr + dex + prof;
+                }
+            });
+            $('#int').change(function(){
+                var intche = $('#int').val();
+                var wische = $('#wis').val();
+                var inta = $( "#int option:selected" ).text();
+                 str = parseInt(inta);
+                 var wisa = $( "#wis option:selected" ).text();
+                 wis = parseInt(wisa);
+                if (intche < wische) {
+                    savea = savec + saver + int + prof + 10;
+                }else if (intche > wische){
+                    savea = savec + saver + wis + prof + 10;
+                }
+            });
+        
+    
 
-//Make a function for inputed information to print out legible information.
-//Make a function to register certain inputed information and calculate
-//format information printed
-//
-//This function prints out text given from inputed values
-function printname(){
-    var giveName = document.getElementById("aname").value;
-    document.getElementById("printHello").innerHTML = "Hello" + giveName
-}
-
-//This function recognizes the drop down and prints out a value.
-function printnumber(){
-    var health = document.getElementById("classification").value;
-    if(health ==="minion"){
-        document.getElementById("printNumber").innerHTML = "Hp = 1-20"
-    }
-    }
-    //array for enemy statistics
-    var abmod1 = ["+2","+2","+1","+0","-1","-1"];
-    var abmod3 = ["+2","+2","+1","+0","+0","-1"];
-    var abmod4 = ["+3","+3","+1","+0","+0","-1"];
-    var abmod6 = ["+4","+3","+1","+1","+0","-1"];
-    var abmod7 = ["+4","+3","+2","+1","+0","+0"];
-    var abmod9 = ["+5","+4","+2","+1","+1","+0"];
-    var abmod12 = ["+6","+4","+2","+1","+1","+0"];
-    var abmod14 = ["+6","+5","+3","+2","+1","+0"];
-    var abmod15 = ["+7","+5","+3","+2","+1","+0"];
-    var abmod17 = ["+7","+5","+3","+2","+1","+1"];
-    var abmod18 = ["+8","+5","+3","+2","+1","+1"];
-    var abmod19 = ["+8","+6","+3","+2","+2","+1"];
-    var abmod20 = ["+8","+6","+4","+2","+2","+1"];
-    var abmod21 = ["+9","+6","+4","+2","+2","+1"];
-    var abmod22 = ["+9","+6","+4","+3","+2","+1"];
-    var abmod23 = ["+10","+7","+4","+3","+2","+1"];
-    var abmod25 = ["+11","+7","+4","+3","+2","+1"];
-    var abmod27 = ["+12","+7","+4","+3","+2","+2"];
-    var abmod28 = ["+12","+7","+5","+3","+2","+2"];
-    var abmod29 = ["+12","+8","+5","+4","+3","+2"];
-    var abmod30 = ["+13","+8","+5","+4","+3","+2"];
-    //function to populate enemy statistics from array
-    var mySelect = $('#str');
-    $.each(abmod1, function(abmod, text) {
-    mySelect.append(
-        $('<option></option>').val(abmod).html(text)
-    );
+        });
+    
     });
+    $("#print").click(function(){
+            
+        //damage part of print function
+        var dexche = $('#dex').val();
+        var strche = $('#str').val();
+        var stra = $( "#str option:selected" ).text();
+        str = parseInt(stra);
+        var dexa = $( "#dex option:selected" ).text();
+        dex = parseInt(dexa);
+    
+        if (strche < dexche && strche) {
+            var totdam = bd + dam + str
+        }else if (strche > dexche && dexche){
+            var totdam = bd + dam + dex
+        }
+        
+        if (totdam <= 19){
+            damact = Math.round(totdam*DPR);
+        }else if (totdam > 19 && totdam <=39){
+            damact = Math.round((totdam/2)*DPR);
+        }else if (totdam >39 && totdam <=59){
+            damact = Math.round((totdam/3)*DPR);
+        }else if (totdam >59){
+            damact = Math.round((totdam/4)*DPR);
+        }
+    //hp part of print function
+    var cona = $( "#con option:selected" ).text();
+        con = parseInt(cona);
+        var lvln = $( "#lvl option:selected" ).val();
+        var hpaa = hpc * (ahp+con) * parseInt(lvln);
+        var hpam = hpc * (mhp+con) * parseInt(lvln);
+        var chaaa = chac * (acha+con) * parseInt(lvln);
+        var chaam = chac * (mcha+con) * parseInt(lvln);
+        //AC part of print function.
+        var ACact = ACcla + ACint + dex + (prof/2);
+        //iniative part of function
+        var init = initc + dex;
+        //speed
+        var speedact = ST + spb;
+        //This is the temporary console log of everything.
+        var name = $("#aname").val();
+        console.log("Adversary is:", name);
+        console.log("Adversary does:", damact, "per round");
+        console.log("Adversary HP is: ", hpaa, "or ", hpam);
+        console.log("Adversary Chakra is: ",chaaa, "or", chaam);
+        console.log("Adversary to hit is: ", hita);
+        console.log("Adversary AC is: ", ACact);
+        console.log("Adversary initative is: ", init);
+        console.log("Adversary speed is: ", speedact);
+        console.log("The Save DC is: ", savea);
+        
+    });
+});
+
 //if else statement that cycles through enemy level and changes stat array as user clicks through
 $(document).ready(function()  {
     $("#lvl").change(function(){
@@ -348,89 +555,3 @@ ACint = 12;
         $("#wis").empty();
         $("#cha").empty();
     };
-
-
-$(document).ready(function()  {
-    $("#enemyt").change(function(){
-        var val = $(this).val();
-        if (val =="caster"){ ACint -= 2; 
-            console.log(ACint);
-            ACint += 2;
-            console.log(bd);
-        }else if (val =="controller"){
-            ACint -= 1;
-            console.log(ACint);
-            ACint += 1;
-            console.log(bd);
-
-        }
-
-
-
-    });
-});
-//else if that will change based on enemy rank and update hp and to hit and all that.
-$(document).ready(function()  {
-    $("#rank").change(function(){
-        var val = $(this).val();
-        var lvln = $("#lvl").val();
-        if (val =="e"){ mhp = 2;
-            mcha = 2;
-            ahp = 2;
-            acha = 2;
-            hitt = -3;
-            savet = -3;
-            ACr =  -3;
-            bd = 0;
-        }else if (val =="d"){
-            mhp = 4;
-            mcha = 4;
-            ahp = 3;
-            acha = 3;
-            hitt = -2;
-            savet = -2;
-            ACr = -2;
-            bd = 0;
-
-        }else if (val =="c"){
-            mhp = 6;
-            mcha = 6;
-            ahp = 4;
-            acha = 4;
-            hitt = 0;
-            savet = 0;
-            ACr = 0;
-            bd = lvln;
-        }else if (val =="b"){
-            mhp = 8;
-            mcha = 8;
-            ahp = 5;
-            acha = 5;
-            hitt = 0;
-            savet = 0; 
-            ACr = 0;
-            bd = Math.round(1.5*lvln);
-        }else if (val =="a"){
-            mhp = 10;
-            mcha = 10;
-            ahp = 6;
-            acha = 6;
-            hitt = 1;
-            savet = 1;
-            ACr = 1;
-            bd = 2*lvln;
-        }else if (val =="s"){
-            mhp = 12;
-            mcha = 12;
-            ahp = 7;
-            acha = 7;
-            hitt = 2;
-            savet = 2;
-            ACr = 2;
-            bd = Math.round(2.5*lvln);
-        }
-
-        
-
-    });
-});
