@@ -182,7 +182,8 @@ ACint = 12;
                         ACint = 13;
                         prof = 6;
                         dam = 38;
-                        }else if(val =="13"){
+                        }else if
+                    (val =="13"){
                         clear();
                         $.each(abmod12, function(val, text) {
                         stat(val,text);
