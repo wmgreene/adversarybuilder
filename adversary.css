@@ -1,0 +1,18 @@
+#container{
+    width: 300px;
+    background: rgb(228,88,00);
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+#parent{
+    background:burlywood;
+    font-family: arial;
+    text-align: center;
+    font-size: 13px;
+    overflow-wrap: normal;
+    width: 300px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}

@@ -51,15 +51,15 @@ var savec = 0;
 $(document).ready(function(){
     $("#classification").change(function(){
         var val = $(this).val();
-        while(val =="minion"){
+        if (val =="minion"){
             mhp = 20;
             mcha = 20;
             ahp = 1;
             acha = 1;
             initc = -2;
             XPC = 0.25;
-        if(val =="elite")break;}
-        if(val =="elite"){
+        }
+        else if(val =="elite"){
             hpc = 2;
             chac = 2;
             initc = -2;
@@ -133,7 +133,6 @@ $(document).ready(function(){
             $("#rank").change(function(){
                 var val = $(this).val();
                 var lvln = $("#lvl").val();
-                var lvl = parseInt(lvln)
                 if (val =="e"){ mhp = 2;
                     mcha = 2;
                     ahp = 2;
@@ -142,6 +141,7 @@ $(document).ready(function(){
                     saver = -3;
                     ACr =  -3;
                     bd = 0;
+                    
                 }else if (val =="d"){
                     mhp = 4;
                     mcha = 4;
@@ -151,6 +151,7 @@ $(document).ready(function(){
                     saver = -2;
                     ACr = -2;
                     bd = 0;
+                    
                 }else if (val =="c"){
                     mhp = 6;
                     mcha = 6;
@@ -159,7 +160,8 @@ $(document).ready(function(){
                     hitr = 0;
                     saver = 0;
                     ACr = 0;
-                    bd = lvl;
+                    bd = parseInt(lvln);
+                    
                 }else if (val =="b"){
                     mhp = 8;
                     mcha = 8;
@@ -168,7 +170,8 @@ $(document).ready(function(){
                     hitr = 0;
                     saver = 0; 
                     ACr = 0;
-                    bd = Math.round(1.5*lvl);
+                    
+                    bd = Math.round(1.5*parseInt(lvln));
                 }else if (val =="a"){
                     mhp = 10;
                     mcha = 10;
@@ -177,6 +180,7 @@ $(document).ready(function(){
                     hitr = 1;
                     saver = 1;
                     ACr = 1;
+                    
                     bd = 2*lvl;
                 }else if (val =="s"){
                     mhp = 12;
@@ -186,7 +190,7 @@ $(document).ready(function(){
                     hitr = 2;
                     saver = 2;
                     ACr = 2;
-                    bd = Math.round(2.5*lvl);
+                    bd = Math.round(2.5*parseInt(lvln));
                 }
             });
             $('#str').change(function(){
@@ -210,9 +214,9 @@ $(document).ready(function(){
                  var wisa = $( "#wis option:selected" ).text();
                  wis = parseInt(wisa);
                 if (intche < wische) {
-                    savea = savec + saver + int + prof + 10;
+                    savea = savec + saver + int + prof + 5;
                 }else if (intche > wische){
-                    savea = savec + saver + wis + prof + 10;
+                    savea = savec + saver + wis + prof + 5;
                 }
             });
         
@@ -245,7 +249,7 @@ $(document).ready(function(){
             damact = Math.round((totdam/3)*DPR);
         }else if (totdam >59){
             damact = Math.round((totdam/4)*DPR);
-        }
+       }
     //hp part of print function
     var cona = $( "#con option:selected" ).text();
         con = parseInt(cona);
@@ -271,7 +275,15 @@ $(document).ready(function(){
         console.log("Adversary initative is: ", init);
         console.log("Adversary speed is: ", speedact);
         console.log("The Save DC is: ", savea);
-        
+        $("#parent").append("<p>"+"Adversary's name is: " + name +"."+ "</p>");
+        $("#parent").append("<p>"+"Adversary's HP is: " + hpaa +" or " + hpam +"."+ "</p>");
+        $("#parent").append("<p>"+ "Adversary's Chakra is: "+ chaaa + " or "+ chaam +"."+"</p>");
+        $("#parent").append("<p>"+ "Adversary's AC is: "+ ACact +"."+"</p>");
+        $("#parent").append("<p>"+ "Adversary's iniative is: "+ init +"."+"</p>");
+        $("#parent").append("<p>"+ "Adversary's speed is: "+ speedact +"."+"</p>");
+        $("#parent").append("<p>"+ "Adversary's to hit is: "+ hita +"."+"</p>");
+        $("#parent").append("<p>"+ "Adversary's Save DC is: "+ savea + "."+"</p>");
+        $("#parent").append("<p>"+ "Adversary deals: "+ damact +" per action."  +"</p>");
     });
 });
 

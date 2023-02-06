@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naruto Adversary Builder</title>
     <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="adversary.js" charset="utf-8"></script>></script>
+    <script src="adversary.js" charset="utf-8"></script></script>
     <script src="https://code.jquery.com/jquery-git.js"></script>
+    <link rel = "stylesheet" href = "adversary.css">
 </head>
 <body>
     <div id="container">
@@ -26,27 +27,31 @@
         </select>
     </div>
 </div>
-        <div id= "cenemy"><label for="type">Enemy Type:</label><label for="rank">Adversary Rank:</label><br>
-        <select name="type" id ="enemyt">
-            <option value="caster">Caster</option>
-            <option value="controller">Controller</option>
-            <option value="defender">Defender</option>
-            <option value="generalist">Generalist</option>
-            <option value="lurker">Lurker</option>
-            <option value="striker">Striker</option>
-            <option value="iconic">Iconic</option>
-        </select>
-        <select name="rank" id="rank">
-            <option value="e">E</option>
-            <option value="d">D</option>
-            <option value="c">C</option>
-            <option value="b">B</option>
-            <option value="a">A</option>
-            <option value="s">S</option>
-        </select>
+        <div id= "cenemy"><div id ="divtype"><label for="type">Enemy Type:</label>
+            <select name="type" id ="enemyt">
+                <option value="caster">Caster</option>
+                <option value="controller">Controller</option>
+                <option value="defender">Defender</option>
+                <option value="generalist">Generalist</option>
+                <option value="lurker">Lurker</option>
+                <option value="striker">Striker</option>
+                <option value="iconic">Iconic</option>
+            </select>
+        </div>
+        <div id = "divrank"><label for="rank">Adversary Rank:</label>
+        
+            <select name="rank" id="rank">
+                <option value="e">E</option>
+                <option value="d">D</option>
+                <option value="c">C</option>
+                <option value="b">B</option>
+                <option value="a">A</option>
+                <option value="s">S</option>
+            </select></div>
+            
     </div>
     <div id="clvl">
-        <label for="level">Enemy level:</label><label for="player">Number of players:</label><br>
+        <label for="level">Enemy level:</label>
         <select name="level" id="lvl" class = "lvl">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -78,44 +83,66 @@
             <option value="28">28</option>
             <option value="29">29</option>
             <option value="30">30</option>
-        </select> <input type = "number"  id= "playeram"><br>
-        <label for="stats">Enemy Statistics:</label><br>
-        <label for="str">STR</label><label for="dex">DEX</label><label for="con">CON</label>
-        <label for="int">INT</label><label for="wis">WIS</label><label for="cha">CHA</label><br>
-        <select for="str" id='str'>
-            <option data-group='SHOW' value='0'>--Select--
-
-            </option>
-        </select>
-        <select for="dex" id="dex">
-            <option value='0'>--Select--
-
-            </option>
-        </select>
-        <select for="con" id="con">
-            <option data-group='SHOW' value='0'>--Select--
-
-            </option>
-        </select>
-        <select for="int" id="int">
-            <option data-group='SHOW' value='0'>--Select--
-
-            </option>
-        </select>
-        <select for="wis" id="wis">
-            <option data-group='SHOW' value='0'>--Select--
-
-            </option>
-        </select>
-        <select for="cha" id="cha">
-            <option data-group='SHOW' value='0'>--Select--
-
-            </option>
-        </select>
-    </div><br>
+        </select></div><div id ="playernumber">
+        <label for="player">Number of players:</label>
+         <input type = "number"  id= "playeram"></div>
+         <div id= "playerstats"><label for="stats">Enemy Statistics:</label><br>
+        <div><label for="str">STR:</label>
+            <select for="str" id='str'>
+                <option data-group='SHOW' value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        <div>
+            <label for="dex">DEX:</label>
+            <select for="dex" id="dex">
+                <option value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        <div><label for="con">CON:</label>
+            <select for="con" id="con">
+                <option data-group='SHOW' value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        <div><label for="int">INT:</label>
+            <select for="int" id="int">
+                <option data-group='SHOW' value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        <div><label for="wis">WIS:</label>
+            <select for="wis" id="wis">
+                <option data-group='SHOW' value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        <div><label for="cha">CHA:</label>
+            <select for="cha" id="cha">
+                <option data-group='SHOW' value='0'>--Select--
+    
+                </option>
+            </select>
+        </div>
+        
+        
+       
+        
+       
+        
+        
+        </div>
+    <br>
         
         <button id="print" class ="print">PRINT ADVERSARY</button>
         <label id="printHello"></label><label id="printNumber"></label>
     </div>
+    <div id="parent"></div>
 </body>
 </html>
